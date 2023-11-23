@@ -12,6 +12,9 @@ import MoviesContextProvider from "./contexts/moviesContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage'
 import TopRatedMoviePage from "./pages/topRatedMoviesPage";
 import TrendingMoviesPage from "./pages/trendingMoviesPage";
+import TVShowPage from "./pages/discoverTVShowsPage";
+import TemplateTVShowPage from "./pages/tvShowDetailsPage";
+import TvShowContextProvider from "./contexts/tvShowContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,6 +32,7 @@ const App = () => {
       <BrowserRouter>
         <SiteHeader />
         <MoviesContextProvider>
+        <TvShowContextProvider>
         <Routes>
           <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
           <Route path="/movies/trending" element={ <TrendingMoviesPage /> } />
@@ -37,10 +41,12 @@ const App = () => {
           <Route path="/movies/topratedmovies" element={<TopRatedMoviePage />} />
           <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
           <Route path="/movies/:id" element={<MoviePage />} />
+          <Route path="/tvshows/discover" element={<TVShowPage/>}/>
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={ <Navigate to="/" /> } />
           <Route path="/reviews/form" element={ <AddMovieReviewPage /> } />
         </Routes>
+        </TvShowContextProvider>
         </MoviesContextProvider>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
