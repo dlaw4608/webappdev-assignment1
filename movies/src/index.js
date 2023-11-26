@@ -15,6 +15,7 @@ import TrendingMoviesPage from "./pages/trendingMoviesPage";
 import TVShowPage from "./pages/discoverTVShowsPage";
 import TemplateTVShowPage from "./pages/tvShowDetailsPage";
 import TvShowContextProvider from "./contexts/tvShowContext";
+import FavoriteTvShowPage from "./pages/favoriteTvShowsPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -38,13 +39,16 @@ const App = () => {
           <Route path="/movies/trending" element={ <TrendingMoviesPage /> } />
           {/* <Route path="/movies/upcoming" element={<UpcomingMoviesPage />} /> */}
           {/*<Route path="/tvshows/page=:pageNumber" element = {<TVPage/>}/>*/}
+          <Route path="" element={<TopRatedMoviePage />} />
           <Route path="/movies/topratedmovies" element={<TopRatedMoviePage />} />
           <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
           <Route path="/movies/:id" element={<MoviePage />} />
           <Route path="/tvshows/discover" element={<TVShowPage/>}/>
+          <Route path="/tvshow/favorites" element={<FavoriteTvShowPage></FavoriteTvShowPage>}></Route>
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={ <Navigate to="/" /> } />
           <Route path="/reviews/form" element={ <AddMovieReviewPage /> } />
+          <Route path="/tvshow/:id" element={<TemplateTVShowPage/>}></Route>
         </Routes>
         </TvShowContextProvider>
         </MoviesContextProvider>

@@ -4,7 +4,7 @@ import { TvShowContext } from "../contexts/tvShowContext";
 import { useQueries } from "react-query";
 import { getTvShow } from "../api/tmdb-api";
 import Spinner from '../components/spinner';
-import RemoveFromFavorites from "../components/TvcardIcons/removeFromFavorite";
+import RemoveFromFavorites from "../components/TvcardIcons/removeFromFavorites";
 
 const FavoriteTvShowsPage = () => {
   const {favoritesTV: ids} = useContext(TvShowContext);
