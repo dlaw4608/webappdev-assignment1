@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from 'react-router-dom';
-import TVShowdetails from "../components/tvshowDetails";
+import TVShowdetails from "../components/tvShowDetails";
 import PageTemplate from "../components/templateTvShow";
 import { getTvShow} from '../api/tmdb-api'
 import { useQuery } from "react-query";

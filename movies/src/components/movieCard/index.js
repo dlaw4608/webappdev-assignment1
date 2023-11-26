@@ -1,4 +1,6 @@
-
+import React, { useContext } from "react";
+import { MoviesContext } from "../../contexts/moviesContext";
+import { Link } from "react-router-dom";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -6,36 +8,49 @@ import CardMedia from "@mui/material/CardMedia";
 import CardHeader from "@mui/material/CardHeader";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Avatar from "@mui/material/Avatar";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
 import StarRateIcon from "@mui/icons-material/StarRate";
-import IconButton from "@mui/material/IconButton";
 import Grid from "@mui/material/Grid";
-import img from '../../images/film-poster-placeholder.png'
-import { Link } from "react-router-dom";
-import Avatar from '@mui/material/Avatar';
-import React, { useContext  } from "react";
-import { MoviesContext } from "../../contexts/moviesContext";
+import img from '../../images/film-poster-placeholder.png';
+import AddToWatchIcon from "../cardIcons/addToWatch";
 
-export default function MovieCard( {movie, action} ) {
+export default function MovieCard({ movie, action }) {
   const { favorites, addToFavorites } = useContext(MoviesContext);
 
-  if (favorites.find((id) => id === movie.id)) {
-    movie.favorite = true;
+  if (favorites && favorites.find((id) => id === movie.id)) {
+    movie.favourite = true;
   } else {
-    movie.favorite = false
+    movie.favourite = false;
   }
+
+  const { watchlist, addToWatch } = useContext(MoviesContext);
+
+  if (watchlist && watchlist.find((id) => id === movie.id)) {
+    movie.watchlist = true;
+  } else {
+    movie.watchlist = false;
+  }
+
+  
 
   const handleAddToFavorite = (e) => {
     e.preventDefault();
     addToFavorites(movie);
   };
-  
+
+  const handleAddToWatch = (e) => {
+    e.preventDefault();
+    addToWatch(movie);
+  }
+
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, border: '2px solid black', borderRadius: '5px', transition: 'transform 0.15s ease-in-out', '&:hover': {transform: 'scale(1.03)'}}}>
       <CardHeader
         avatar={
-          movie.favorite ? (
+          movie.favourite ? (
             <Avatar sx={{ backgroundColor: 'red' }}>
               <FavoriteIcon />
             </Avatar>
@@ -66,26 +81,16 @@ export default function MovieCard( {movie, action} ) {
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <StarRateIcon fontSize="small" />
-              {"  "} {movie.vote_average}{" "}
+              {"  "} {movie.vote_average} {"  "}
             </Typography>
           </Grid>
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
-      <IconButton aria-label="add to favorites" onClick={handleAddToFavorite}>
-        <FavoriteIcon color="primary" fontSize="large" />
-    </IconButton>
-        <Link to={`/movies/${movie.id}`}>
-        <Button variant="outlined" size="medium" color="primary">
-          More Info ...
-        </Button>
-        </Link>
-      </CardActions>
-      <CardActions disableSpacing>
         {action(movie)}
         <Link to={`/movies/${movie.id}`}>
           <Button variant="outlined" size="medium" color="primary">
-            More Info ...
+            More Info...
           </Button>
         </Link>
       </CardActions>

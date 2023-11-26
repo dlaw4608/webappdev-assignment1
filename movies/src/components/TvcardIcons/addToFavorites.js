@@ -3,19 +3,19 @@ import { TvShowContext } from "../../contexts/tvShowContext";
 import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
-const AddToFavouritesIconTV = ({ tvShow }) => {
+const AddToFavoritesIconTV = ({ tvShow }) => {
     const context = useContext(TvShowContext);
 
-  const handleAddToFavourites = (e) => {
+  const handleAddToFavorites = (e) => {
     e.preventDefault();
-    context.addToFavourites(tvShow);
+    context.addToFavorites(tvShow);
   };
 
   return (
-    <IconButton aria-label="add to favorites" onClick={handleAddToFavourites}>
+    <IconButton aria-label="add to favorites" onClick={handleAddToFavorites}>
       <FavoriteIcon color="primary" fontSize="large" />
     </IconButton>
   );
 };
 
-export default AddToFavouritesIconTV;
+export default AddToFavoritesIconTV;

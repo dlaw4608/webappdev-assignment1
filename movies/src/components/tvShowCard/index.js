@@ -16,12 +16,12 @@ import Avatar from '@mui/material/Avatar';
 import { TvShowContext } from "../../contexts/tvShowContext";
 
 export default function TVShowCard({ tvShow, action }) {
-  const { favouritesTV }  = useContext(TvShowContext);
+  const { favoritesTV }  = useContext(TvShowContext);
 
-  if (favouritesTV.find((id) => id === tvShow.id)) {
-    tvShow.favourite = true;
+  if (favoritesTV.find((id) => id === tvShow.id)) {
+    tvShow.favorite = true;
   } else {
-    tvShow.favourite = false
+    tvShow.favorite = false
   }
     return(
         <Card sx={{ maxWidth: 345 }}>
