@@ -43,8 +43,6 @@ npm install
 
 <img width="1440" alt="Screenshot 2023-11-27 at 06 10 09" src="https://github.com/dlaw4608/webappdev-assignment1/assets/91201621/f1942ef8-1847-492a-92a5-8b9e2e1dbf17">
 <img width="1440" alt="Screenshot 2023-11-27 at 06 10 18" src="https://github.com/dlaw4608/webappdev-assignment1/assets/91201621/bffe0356-d68c-47a1-980c-eddd32cd0b7d">
-![Uploading Screenshot 2023-11-27 at 06.10.18.png…]()
-
 <img width="1440" alt="Screenshot 2023-11-27 at 06 10 35" src="https://github.com/dlaw4608/webappdev-assignment1/assets/91201621/6f0b3b80-6e0c-4320-a0e0-995a6c149e37">
 <img width="309" alt="Screenshot 2023-11-27 at 06 10 53" src="https://github.com/dlaw4608/webappdev-assignment1/assets/91201621/0e6122aa-576a-498f-86c0-24a72717f4d0">
 <img width="1435" alt="Screenshot 2023-11-27 at 06 11 38" src="https://github.com/dlaw4608/webappdev-assignment1/assets/91201621/d9abf609-a49e-41d0-b3fe-47fb598c8131">
