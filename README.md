@@ -1,4 +1,4 @@
-<img width="1440" alt="Screenshot 2023-11-27 at 06 10 25" src="https://github.com/dlaw4608/webappdev-assignment1/assets/91201621/c301e981-e273-43f1-b931-3aba073671cb"># Assignment 1 - ReactJS app.
+# Assignment 1 - ReactJS app.
 
 Name: Daniel Lawton
 
@@ -52,6 +52,7 @@ npm install
 
 
 
+## Independent learning
 
 Pagination - https://mui.com/material-ui/react-pagination/
 
