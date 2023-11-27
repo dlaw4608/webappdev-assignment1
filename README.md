@@ -1,5 +1,7 @@
 # Assignment 1 - ReactJS app.
+
 Link to video showcase: https://youtu.be/ommJqajnETc
+
 Name: Daniel Lawton
 
 ## Overview.
