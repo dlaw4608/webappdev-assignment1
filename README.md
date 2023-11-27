@@ -1,6 +1,6 @@
 # Assignment 1 - ReactJS app.
 
-Name: [your name]
+Name: Daniel Lawton
 
 ## Overview.
 
@@ -9,8 +9,11 @@ Name: [your name]
 ### Features.
 [ A bullet-point list of the __new features__ you added to the Movies Fan app (and any modifications to existing features) .]
  
-+ Feature 1
-+ Feature 2
+Top rated movies page
+
+Discover Tv show page
+
+
 + Feature 3
 + etc
 + etc
