@@ -11,6 +11,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import MoviesContextProvider from "./contexts/moviesContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage'
 import TopRatedMoviePage from "./pages/topRatedMoviesPage";
+import SimilarMoviesPage from "./pages/similarMoviesPage.js";
 import TrendingMoviesPage from "./pages/trendingMoviesPage";
 import TVShowPage from "./pages/discoverTVShowsPage";
 import TemplateTVShowPage from "./pages/tvShowDetailsPage";
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/tvshow/favorites" element={<FavoriteTvShowPage></FavoriteTvShowPage>}></Route>
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={ <Navigate to="/" /> } />
+          <Route path="/movies/:id/similar" element={<SimilarMoviesPage />} />
           <Route path="/reviews/form" element={ <AddMovieReviewPage /> } />
           <Route path="/tvshow/:id" element={<TemplateTVShowPage/>}></Route>
         </Routes>

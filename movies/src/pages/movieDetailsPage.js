@@ -1,14 +1,15 @@
-import React, {useState, useEffect}  from "react";
+import React from "react";
 import { useParams } from 'react-router-dom';
 import MovieDetails from "../components/movieDetails/";
 import PageTemplate from "../components/templateMoviePage";
-import { getMovie } from "../api/tmdb-api";
+import { getMovie } from '../api/tmdb-api'
 import { useQuery } from "react-query";
 import Spinner from '../components/spinner'
-// import useMovie from "../hooks/useMovie";   Redundant
+import { Link } from 'react-router-dom';
 
-const MoviePage = (props) => {
+const MovieDetailsPage = (props) => {
   const { id } = useParams();
+
   const { data: movie, error, isLoading, isError } = useQuery(
     ["movie", { id: id }],
     getMovie
@@ -28,6 +29,15 @@ const MoviePage = (props) => {
         <>
           <PageTemplate movie={movie}>
             <MovieDetails movie={movie} />
+            <div className="col-4">
+                <Link
+                  className="btn btn-primary"
+                  to={`/movies/${id}/similar`}
+                  style={{ fontSize: '32px' }}
+                >
+                  Click here to see some more movies similar to this one
+                </Link>
+          </div>
           </PageTemplate>
         </>
       ) : (
@@ -37,4 +47,4 @@ const MoviePage = (props) => {
   );
 };
 
-export default MoviePage;
+export default MovieDetailsPage;
